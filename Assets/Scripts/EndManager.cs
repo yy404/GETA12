@@ -37,13 +37,20 @@ public class EndManager : MonoBehaviour
     void WinGame()
     {
         displayText.text = "You win!";
-        isGameActive = false;
+        EndGame();
     }
 
     void LoseGame()
     {
         displayText.text = "You lose!";
+        EndGame();
+    }
+
+    void EndGame()
+    {
         isGameActive = false;
+        PlayerController playerController = FindObjectOfType<PlayerController>();
+        playerController.StopAnim();
     }
 
     public bool CheckGameActive()
