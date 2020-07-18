@@ -6,13 +6,16 @@ using UnityEngine.UI;
 public class EndManager : MonoBehaviour
 {
     public Text displayText;
+    public GameObject theEgg;
 
     private bool isGameActive;
+    private bool isReachDest;
 
     // Start is called before the first frame update
     void Start()
     {
         isGameActive = true;
+        isReachDest = false;
     }
 
     // Update is called once per frame
@@ -20,11 +23,11 @@ public class EndManager : MonoBehaviour
     {
         if (isGameActive == true)
         {
-            if (Input.GetMouseButtonDown(0))
+            if (isReachDest == true)
             {
                 WinGame();
             }
-            if (Input.GetMouseButtonDown(1))
+            else if (theEgg.transform.position.y < 1)
             {
                 LoseGame();
             }
@@ -41,5 +44,15 @@ public class EndManager : MonoBehaviour
     {
         displayText.text = "You lose!";
         isGameActive = false;
+    }
+
+    public bool CheckGameActive()
+    {
+        return isGameActive;
+    }
+
+    public void SetReachDest()
+    {
+        isReachDest = true;
     }
 }
