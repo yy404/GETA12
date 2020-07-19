@@ -4732,6 +4732,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4c780dab19a7e34419d3da69a409ec7e, type: 3}
+--- !u!1 &479466385 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1649242102538884, guid: 02fd4f45795807c469e76f06078fe76f,
+    type: 3}
+  m_PrefabInstance: {fileID: 667036902}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &481144100 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 477202, guid: 87475ce363e4bcf40b5791256be68f7d,
@@ -6474,7 +6480,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4293961362142948, guid: 02fd4f45795807c469e76f06078fe76f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 60.6
+      value: 60.5
       objectReference: {fileID: 0}
     - target: {fileID: 4293961362142948, guid: 02fd4f45795807c469e76f06078fe76f, type: 3}
       propertyPath: m_LocalRotation.x
@@ -6494,7 +6500,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4293961362142948, guid: 02fd4f45795807c469e76f06078fe76f, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 4293961362142948, guid: 02fd4f45795807c469e76f06078fe76f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -6525,6 +6531,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 96c57a7277565124688133d57d54d4e1, type: 2}
+    - target: {fileID: 136479672647553860, guid: 02fd4f45795807c469e76f06078fe76f,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02fd4f45795807c469e76f06078fe76f, type: 3}
 --- !u!1001 &668743862
@@ -15739,7 +15750,7 @@ Transform:
   - {fileID: 942238326}
   - {fileID: 311399491}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1513885050
 PrefabInstance:
@@ -19936,6 +19947,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayText: {fileID: 424049543}
   theEgg: {fileID: 356842541}
+  destination: {fileID: 479466385}
+  destRangeRadius: 3
+  eggRangeRadius: 1.5
 --- !u!1001 &1930565177
 PrefabInstance:
   m_ObjectHideFlags: 0

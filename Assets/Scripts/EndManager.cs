@@ -7,15 +7,16 @@ public class EndManager : MonoBehaviour
 {
     public Text displayText;
     public GameObject theEgg;
+    public GameObject destination;
+    public float destRangeRadius;
+    public float eggRangeRadius;
 
     private bool isGameActive;
-    private bool isReachDest;
 
     // Start is called before the first frame update
     void Start()
     {
         isGameActive = true;
-        isReachDest = false;
     }
 
     // Update is called once per frame
@@ -23,11 +24,12 @@ public class EndManager : MonoBehaviour
     {
         if (isGameActive == true)
         {
-            if (isReachDest == true)
+            float distToDest = Mathf.Abs(theEgg.transform.position.z - destination.transform.position.z);
+            if (distToDest < destRangeRadius)
             {
                 WinGame();
             }
-            else if (theEgg.transform.position.y < 1)
+            else if (theEgg.transform.position.y < eggRangeRadius)
             {
                 LoseGame();
             }
@@ -50,16 +52,11 @@ public class EndManager : MonoBehaviour
     {
         isGameActive = false;
         PlayerController playerController = FindObjectOfType<PlayerController>();
-        playerController.StopAnim();
+        Time.timeScale = 0;
     }
 
     public bool CheckGameActive()
     {
         return isGameActive;
-    }
-
-    public void SetReachDest()
-    {
-        isReachDest = true;
     }
 }

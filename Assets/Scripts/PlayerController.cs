@@ -34,14 +34,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Destination"))
-        {
-            // Debug.Log("Player has reached the destination.");
-            endManager.SetReachDest();
-        }
-    }
+    // private void OnCollisionEnter(Collision collision)
+    // {
+    // }
 
     private void MovePlayer()
     {
@@ -72,11 +67,5 @@ public class PlayerController : MonoBehaviour
             chickenFrontAnim.SetBool("Walk", false);
             chickenBackAnim.SetBool("Walk", false);
         }
-    }
-
-    public void StopAnim()
-    {
-        chickenFrontAnim.SetBool("Walk", false);
-        chickenBackAnim.SetBool("Walk", false);
     }
 }
