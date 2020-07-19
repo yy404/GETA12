@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public float force;
+    public bool defultControlType;
     public Animator chickenFrontAnim;
     public Animator chickenBackAnim;
 
@@ -47,11 +48,19 @@ public class PlayerController : MonoBehaviour
         float horizontalInput = Input.GetAxisRaw("Horizontal");
         float verticalInput = Input.GetAxisRaw("Vertical");
 
-        Vector3 horizontalMovement = new Vector3 (horizontalInput, 0, 0);
-        Vector3 verticalMovement = new Vector3 (0, 0, verticalInput);
         Vector3 movement = new Vector3 (horizontalInput, 0, verticalInput);
-        rb.MovePosition(transform.position + horizontalMovement * speed * Time.fixedDeltaTime);
-        rb.AddForce(verticalMovement * force);
+        if (defultControlType == false)
+        {
+            Vector3 horizontalMovement = new Vector3 (horizontalInput, 0, 0);
+            Vector3 verticalMovement = new Vector3 (0, 0, verticalInput);
+            rb.MovePosition(transform.position + horizontalMovement * speed * Time.fixedDeltaTime);
+            rb.AddForce(verticalMovement * force);
+        }
+        else
+        {
+            Vector3 dummyVerticalMovement = new Vector3 (0, 0, horizontalInput);
+            rb.AddForce(dummyVerticalMovement * force);
+        }
 
         if (movement.magnitude > 0)
         {
