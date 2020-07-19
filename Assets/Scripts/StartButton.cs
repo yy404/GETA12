@@ -25,6 +25,7 @@ public class StartButton : MonoBehaviour
     {
         // Debug.Log(button.gameObject.name + " was clicked");
         SceneManager.LoadScene("SampleScene");
+        Time.timeScale = 1;
     }
 
 }

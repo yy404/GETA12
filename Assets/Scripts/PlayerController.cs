@@ -12,12 +12,14 @@ public class PlayerController : MonoBehaviour
 
     private Rigidbody rb;
     private EndManager endManager;
+    private AudioPlayer audioPlayer;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
         endManager = FindObjectOfType<EndManager>();
+        audioPlayer = FindObjectOfType<AudioPlayer>();
     }
 
     // Update is called once per frame
@@ -61,11 +63,13 @@ public class PlayerController : MonoBehaviour
         {
             chickenFrontAnim.SetBool("Walk", true);
             chickenBackAnim.SetBool("Walk", true);
+            audioPlayer.PlayFootstep();
         }
         else
         {
             chickenFrontAnim.SetBool("Walk", false);
             chickenBackAnim.SetBool("Walk", false);
+            audioPlayer.StopPlay();
         }
     }
 }
