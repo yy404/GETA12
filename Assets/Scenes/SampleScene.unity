@@ -3624,7 +3624,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfa8a92eb9797477ea8ee252e2bf67f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  force: 2
+  force: 1
 --- !u!1001 &363446260
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -12392,7 +12392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 283a55e70b9274b40bd1e714a1762bcb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 4
+  speed: 1
   force: 100
   defultControlType: 1
   chickenFrontAnim: {fileID: 2123755486}

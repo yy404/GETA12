@@ -8,6 +8,7 @@ public class EggController : MonoBehaviour
 
     private Rigidbody rb;
     private int flagValue;
+    private float xPosition;
 
     // Start is called before the first frame update
     void Start()
@@ -24,14 +25,20 @@ public class EggController : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (flagValue > 0)
+        // float deltaVal = Mathf.Abs(xPosition - transform.position.x);
+        if (flagValue >= 0 && xPosition < transform.position.x)
         {
             rb.AddForce(Vector3.left * force);
         }
-        else if (flagValue < 0)
+        else if (flagValue <= 0 && xPosition > transform.position.x)
         {
             rb.AddForce(Vector3.right * force);
         }
+    }
+
+    public void UpdatePosiX(float xVal)
+    {
+        xPosition = xVal;
     }
 
     public void UpdateFlag(float val)
