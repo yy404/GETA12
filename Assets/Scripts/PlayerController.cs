@@ -55,7 +55,9 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
+            Vector3 dummyHorizontalMovement = new Vector3 (-verticalInput, 0, 0);
             Vector3 dummyVerticalMovement = new Vector3 (0, 0, horizontalInput);
+            rb.MovePosition(transform.position + dummyHorizontalMovement * speed * Time.fixedDeltaTime);
             rb.AddForce(dummyVerticalMovement * force);
         }
 
