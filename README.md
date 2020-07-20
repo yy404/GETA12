@@ -8,7 +8,9 @@ Rescue the egg by moving it to the end of road. Do NOT drop it.
 *Controls: Arrow keys (or W/A/S/D)*
 
 ## Devlogs
-* v0.2.0:
+* v1.0.0:
+    * Major update: Added obstacle, egg movement controller
+    * Minor update: end game text
 * v0.1.0:
     * Basic menu, gameplay, camera/light
     * Graphics: chicken, stretcher, egg, environment
@@ -17,12 +19,10 @@ Rescue the egg by moving it to the end of road. Do NOT drop it.
 ## TODO
 * Doing
 * TODO
-    * wind/stone/hold, egg velocity
-    * Outline/Font
-    * cover/screenshot
-    * guide/controls
-    * Constraint movement
 * Further
+    * Constraint movement
+    * guide/controls
+    * Outline, Font
     * BGM/Mute
     * Dialog window
     * Enemy/Jump, Improving movement, Multiple eggs
