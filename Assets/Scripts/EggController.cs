@@ -40,7 +40,7 @@ public class EggController : MonoBehaviour
         {
             flagValue = 1;
         }
-        else if (flagValue < 0)
+        else if (val < 0)
         {
             flagValue = -1;
         }
