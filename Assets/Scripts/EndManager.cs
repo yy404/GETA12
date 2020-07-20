@@ -38,7 +38,7 @@ public class EndManager : MonoBehaviour
 
     void WinGame()
     {
-        displayText.text = "You win!";
+        displayText.text = "Win!";
 
         AudioPlayer audioPlayer = FindObjectOfType<AudioPlayer>();
         audioPlayer.PlaySuccess();
@@ -48,7 +48,7 @@ public class EndManager : MonoBehaviour
 
     void LoseGame()
     {
-        displayText.text = "You lose!";
+        displayText.text = "Lose!";
 
         AudioPlayer audioPlayer = FindObjectOfType<AudioPlayer>();
         audioPlayer.PlayFailure();
