@@ -20270,7 +20270,7 @@ MonoBehaviour:
   displayText: {fileID: 424049543}
   theEgg: {fileID: 356842541}
   destination: {fileID: 479466385}
-  destRangeRadius: 3
+  destRangeRadius: 4
   eggRangeRadius: 1.5
 --- !u!1001 &1930565177
 PrefabInstance:

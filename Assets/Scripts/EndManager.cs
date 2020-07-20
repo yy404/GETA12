@@ -24,7 +24,7 @@ public class EndManager : MonoBehaviour
     {
         if (isGameActive == true)
         {
-            float distToDest = Mathf.Abs(theEgg.transform.position.z - destination.transform.position.z);
+            float distToDest = Vector3.Distance(theEgg.transform.position, destination.transform.position);
             if (distToDest < destRangeRadius)
             {
                 WinGame();
