@@ -15,6 +15,10 @@ public class PlayerController : MonoBehaviour
     private AudioPlayer audioPlayer;
     private EggController eggController;
 
+    private Vector3 movement;
+    private float horizontalInput;
+    private float verticalInput;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,41 +31,9 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-    }
-
-    void FixedUpdate()
-    {
-        if (endManager.CheckGameActive())
-        {
-            MovePlayer();
-        }
-    }
-
-    // private void OnCollisionEnter(Collision collision)
-    // {
-    // }
-
-    private void MovePlayer()
-    {
-        float horizontalInput = Input.GetAxisRaw("Horizontal");
-        float verticalInput = Input.GetAxisRaw("Vertical");
-
-        Vector3 movement = new Vector3 (horizontalInput, 0, verticalInput);
-        if (defultControlType == false)
-        {
-            Vector3 horizontalMovement = new Vector3 (horizontalInput, 0, 0);
-            Vector3 verticalMovement = new Vector3 (0, 0, verticalInput);
-            rb.MovePosition(transform.position + horizontalMovement * speed * Time.fixedDeltaTime);
-            rb.AddForce(verticalMovement * force);
-        }
-        else
-        {
-            Vector3 dummyHorizontalMovement = new Vector3 (-verticalInput, 0, 0);
-            Vector3 dummyVerticalMovement = new Vector3 (0, 0, horizontalInput);
-            rb.MovePosition(transform.position + dummyHorizontalMovement * speed * Time.fixedDeltaTime);
-            rb.AddForce(dummyVerticalMovement * force);
-        }
+        horizontalInput = Input.GetAxisRaw("Horizontal");
+        verticalInput = Input.GetAxisRaw("Vertical");
+        movement = new Vector3 (horizontalInput, 0, verticalInput);
 
         if (movement.magnitude > 0)
         {
@@ -75,6 +47,32 @@ public class PlayerController : MonoBehaviour
             chickenFrontAnim.SetBool("Walk", false);
             chickenBackAnim.SetBool("Walk", false);
             audioPlayer.StopPlay();
+        }
+    }
+
+    void FixedUpdate()
+    {
+        if (endManager.CheckGameActive() && movement.magnitude > 0)
+        {
+            MovePlayer();
+        }
+    }
+
+    private void MovePlayer()
+    {
+        if (defultControlType == false)
+        {
+            Vector3 horizontalMovement = new Vector3 (horizontalInput, 0, 0);
+            Vector3 verticalMovement = new Vector3 (0, 0, verticalInput);
+            rb.MovePosition(transform.position + horizontalMovement * speed * Time.fixedDeltaTime);
+            rb.AddForce(verticalMovement * force);
+        }
+        else
+        {
+            Vector3 dummyHorizontalMovement = new Vector3 (-verticalInput, 0, 0);
+            Vector3 dummyVerticalMovement = new Vector3 (0, 0, horizontalInput);
+            rb.MovePosition(transform.position + dummyHorizontalMovement * speed * Time.fixedDeltaTime);
+            rb.AddForce(dummyVerticalMovement * force);
         }
     }
 }
