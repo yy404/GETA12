@@ -8,8 +8,11 @@ Rescue the egg by moving it to the end of road. Do NOT drop it.
 *Controls: Arrow keys (or W/A/S/D)*
 
 ## Devlogs
+* v1.1.0:
+    * Major update: adjusted egg movement for easier control
+    * Minor update: code refactoring for PlayerController
 * v1.0.0:
-    * Major update: Added obstacle, egg movement controller
+    * Major update: added obstacle, egg movement controller
     * Minor update: end game text
 * v0.1.0:
     * Basic menu, gameplay, camera/light
