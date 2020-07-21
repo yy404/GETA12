@@ -26,11 +26,11 @@ public class EggController : MonoBehaviour
     void FixedUpdate()
     {
         // float deltaVal = Mathf.Abs(xPosition - transform.position.x);
-        if (flagValue >= 0 && xPosition < transform.position.x)
+        if (xPosition < transform.position.x)
         {
             rb.AddForce(Vector3.left * force);
         }
-        else if (flagValue <= 0 && xPosition > transform.position.x)
+        else if (xPosition > transform.position.x)
         {
             rb.AddForce(Vector3.right * force);
         }
