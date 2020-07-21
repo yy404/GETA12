@@ -68,7 +68,6 @@ public class PlayerController : MonoBehaviour
             chickenFrontAnim.SetBool("Walk", true);
             chickenBackAnim.SetBool("Walk", true);
             audioPlayer.PlayFootstep();
-            eggController.UpdateFlag(verticalInput);
             eggController.UpdatePosiX(transform.position.x);
         }
         else
@@ -76,7 +75,6 @@ public class PlayerController : MonoBehaviour
             chickenFrontAnim.SetBool("Walk", false);
             chickenBackAnim.SetBool("Walk", false);
             audioPlayer.StopPlay();
-            eggController.ResetFlag();
         }
     }
 }

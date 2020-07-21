@@ -7,14 +7,12 @@ public class EggController : MonoBehaviour
     public float force;
 
     private Rigidbody rb;
-    private int flagValue;
     private float xPosition;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        flagValue = 0;
     }
 
     // Update is called once per frame
@@ -39,21 +37,5 @@ public class EggController : MonoBehaviour
     public void UpdatePosiX(float xVal)
     {
         xPosition = xVal;
-    }
-
-    public void UpdateFlag(float val)
-    {
-        if (val > 0)
-        {
-            flagValue = 1;
-        }
-        else if (val < 0)
-        {
-            flagValue = -1;
-        }
-    }
-    public void ResetFlag()
-    {
-        flagValue = 0;
     }
 }
