@@ -5,6 +5,7 @@ using UnityEngine;
 public class EggController : MonoBehaviour
 {
     public float force;
+    public float resistRatio;
 
     private Rigidbody rb;
     private float xPosition;
@@ -31,6 +32,15 @@ public class EggController : MonoBehaviour
         else if (xPosition > transform.position.x)
         {
             rb.AddForce(Vector3.right * force);
+        }
+
+        if (rb.velocity.x > 0)
+        {
+            rb.AddForce(Vector3.left * force * resistRatio);
+        }
+        else if (rb.velocity.x < 0)
+        {
+            rb.AddForce(Vector3.right * force * resistRatio);
         }
     }
 

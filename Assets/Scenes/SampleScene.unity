@@ -3625,6 +3625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 1
+  resistRatio: 0.4
 --- !u!1001 &363446260
 PrefabInstance:
   m_ObjectHideFlags: 0
