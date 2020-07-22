@@ -8,7 +8,7 @@ Rescue the egg by moving it to the end of road. Do NOT drop it.
 *Controls: Arrow keys (or W/A/S/D)*
 
 ## Devlogs
-* v1.1.1: Fixed sound problem caused by refactoring PlayerController
+* v1.1.1: Fixed sound problem in v1.1.0 caused by refactoring PlayerController
 * v1.1.0:
     * Major update: adjusted egg movement for easier control
     * Minor update: code refactoring for PlayerController
