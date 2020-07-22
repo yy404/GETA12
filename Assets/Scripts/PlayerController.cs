@@ -31,28 +31,31 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        horizontalInput = Input.GetAxisRaw("Horizontal");
-        verticalInput = Input.GetAxisRaw("Vertical");
-        movement = new Vector3 (horizontalInput, 0, verticalInput);
+        if (endManager.CheckGameActive())
+        {
+            horizontalInput = Input.GetAxisRaw("Horizontal");
+            verticalInput = Input.GetAxisRaw("Vertical");
+            movement = new Vector3 (horizontalInput, 0, verticalInput);
 
-        if (movement.magnitude > 0)
-        {
-            chickenFrontAnim.SetBool("Walk", true);
-            chickenBackAnim.SetBool("Walk", true);
-            audioPlayer.PlayFootstep();
-            eggController.UpdatePosiX(transform.position.x);
-        }
-        else
-        {
-            chickenFrontAnim.SetBool("Walk", false);
-            chickenBackAnim.SetBool("Walk", false);
-            audioPlayer.StopPlay();
+            if (movement.magnitude > 0)
+            {
+                chickenFrontAnim.SetBool("Walk", true);
+                chickenBackAnim.SetBool("Walk", true);
+                audioPlayer.PlayFootstep();
+                eggController.UpdatePosiX(transform.position.x);
+            }
+            else
+            {
+                chickenFrontAnim.SetBool("Walk", false);
+                chickenBackAnim.SetBool("Walk", false);
+                audioPlayer.StopPlay();
+            }
         }
     }
 
     void FixedUpdate()
     {
-        if (endManager.CheckGameActive() && movement.magnitude > 0)
+        if (movement.magnitude > 0)
         {
             MovePlayer();
         }
