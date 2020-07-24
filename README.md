@@ -24,13 +24,12 @@ Rescue the egg by moving it to the end of road. Do NOT drop it.
 * Doing
 * TODO
 * Further
-    * Constraint movement
-    * guide/controls
-    * Outline, Font
-    * BGM/Mute
-    * Dialog window
-    * Enemy/Jump, Improving movement, Multiple eggs
-    * Egg sound/particles
+    * Build for Mac/Win
+    * Restart button
+    * Movement constraint, rotating, jump
+    * Outline/font, dialog window, guide/controls
+    * Enemy, count drop times, checkpoint, multiple eggs
+    * Egg sound/particles, BGM/mute
 
 ## Assets Credits
 * ["Stretcher V3"](https://free3d.com/3d-model/stretcher-v3--790632.html)
